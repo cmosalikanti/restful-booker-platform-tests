@@ -3,10 +3,10 @@ name: Playwright Tests for Restful Booker Platform
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   install-and-test:
@@ -37,4 +37,3 @@ jobs:
     - name: Run Playwright tests
       run: |
         npx playwright test
-        
