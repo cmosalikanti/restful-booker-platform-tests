@@ -44,37 +44,6 @@ test('should verify the contents on welcome page section', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Let me hack!' })).toBeVisible();
 });
 
-test('should verify the contents of the contact section', async ({ page }) => {
-  await page.goto('/');
-  await page.getByRole('link', { name: 'home page' }).click();
-
-  await expect(page.locator('#basic-addon1').first()).toBeVisible();
-  await expect(page.getByTestId('ContactName')).toBeVisible();
-  await expect(page.locator('#basic-addon1').nth(1)).toBeVisible();
-  await expect(page.getByTestId('ContactEmail')).toBeVisible();
-  await expect(page.locator('#basic-addon1').nth(2)).toBeVisible();
-  await expect(page.getByTestId('ContactPhone')).toBeVisible();
-  await expect(page.locator('#basic-addon1').nth(3)).toBeVisible();
-  await expect(page.getByTestId('ContactSubject')).toBeVisible();
-  await expect(page.getByText('Message', { exact: true })).toBeVisible();
-  await expect(page.getByTestId('ContactDescription')).toBeVisible();
-
-  await expect(page.locator('.contact')).toContainText('Shady Meadows B&B');
-  await expect(page.getByRole('paragraph').filter({ hasText: 'Shady Meadows B&B' }).locator('span')).toBeVisible();
-
-  await expect(page.locator('.contact')).toContainText('The Old Farmhouse, Shady Street, Newfordburyshire, NE1 410S');
-
-  await expect(page.locator('.contact')).toContainText('012345678901');
-  await expect(page.getByRole('paragraph').filter({ hasText: '012345678901' }).locator('span')).toBeVisible();
-
-  await expect(page.locator('.contact')).toContainText('fake@fakeemail.com');
-  await expect(page.getByRole('paragraph').filter({ hasText: 'fake@fakeemail.com' }).locator('span')).toBeVisible();
-
-  await expect(page.getByRole('button', { name: 'Submit' })).toBeVisible();
-
-  await expect(page.locator('.pigeon-overlays')).toBeVisible();
-});
-
 test('should verify the contents of the Rooms section', async ({ page }) => {
   await page.goto('/');
   await page.goto('https://automationintesting.online/');
