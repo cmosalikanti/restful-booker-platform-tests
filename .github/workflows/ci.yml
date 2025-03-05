@@ -36,4 +36,4 @@ jobs:
     # Step 5: Run the Playwright tests
     - name: Run Playwright tests
       run: |
-        npx playwright test
+        npx playwright test --reporter=list
