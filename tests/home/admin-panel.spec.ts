@@ -56,9 +56,3 @@ test.describe('Admin panel tests', () => {
         adminPanel.expectInputFieldToHaveAnError(adminPanel.getPasswordInputField());
     });
 })
-
-
-test('sdsd', async() => {
-    
-
-});
