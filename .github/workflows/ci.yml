@@ -11,8 +11,9 @@ on:
 jobs:
   install-and-test:
     runs-on: ubuntu-latest
+    env:
+      CI: true
     steps:
-        
     # Step 1: Check out the code
     - name: Checkout repository
       uses: actions/checkout@v4
