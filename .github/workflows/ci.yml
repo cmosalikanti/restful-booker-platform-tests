@@ -15,25 +15,25 @@ jobs:
         
     # Step 1: Check out the code
     - name: Checkout repository
-        uses: actions/checkout@v4
+      uses: actions/checkout@v4
 
     # Step 2: Set up Node.js (specify the version you need)
     - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
+      uses: actions/setup-node@v4
+      with:
         node-version: lts/*
 
     # Step 3: Install dependencies
     - name: Install dependencies
-        run: |
+      run: |
         npm install
 
     # Step 4: Install Playwright and its dependencies
     - name: Install Playwright browsers
-        run: |
+      run: |
         npx playwright install
 
     # Step 5: Run the Playwright tests
     - name: Run Playwright tests
-        run: |
+      run: |
         npx playwright test
