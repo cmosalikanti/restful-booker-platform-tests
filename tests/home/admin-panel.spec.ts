@@ -24,8 +24,8 @@ test.describe('Admin panel tests', () => {
     
     test('should be able to login with a valid username and password', async({ page }) => {
         await page.getByRole('link', {name: 'admin panel', exact: true}).click();
-        await adminPanel.getUsernameInputField().fill('admin')
-        await adminPanel.getPasswordInputField().fill('password')
+        await adminPanel.fillUsername('admin')
+        await adminPanel.fillPassword('password')
         await adminPanel.getSubmitButton().click();
         await expect(page.getByRole('link', { name: 'Logout', exact: true })).toBeAttached();
     });
@@ -34,8 +34,8 @@ test.describe('Admin panel tests', () => {
         await page.goto('/');
         await page.getByRole('link', {name: 'admin panel', exact: true}).click();
         await adminPanel.getSubmitButton().click();
-        adminPanel.expectInputFieldToHaveAnError(adminPanel.getUsernameInputField());
-        adminPanel.expectInputFieldToHaveAnError(adminPanel.getPasswordInputField());
+        await expect(adminPanel.getUsernameInputField()).toHaveAttribute("style", /red/);
+        await expect(adminPanel.getPasswordInputField()).toHaveAttribute("style", /red/);
     });
     
     test('should prompt for error behaviour when username is not entered', async ({ page }) => {
@@ -43,16 +43,16 @@ test.describe('Admin panel tests', () => {
         await page.getByRole('link', {name: 'admin panel', exact: true}).click();
         await adminPanel.getPasswordInputField().fill('password')
         await adminPanel.getSubmitButton().click();
-        adminPanel.expectInputFieldToHaveAnError(adminPanel.getUsernameInputField());
-        adminPanel.expectInputFieldToHaveAnError(adminPanel.getPasswordInputField());
+        await expect(adminPanel.getUsernameInputField()).toHaveAttribute("style", /red/);
+        await expect(adminPanel.getPasswordInputField()).toHaveAttribute("style", /red/);
     });
     
     test('should prompt for error behaviour when password is not entered', async ({ page }) => {
         await page.goto('/');
         await page.getByRole('link', {name: 'admin panel', exact: true}).click();
-        await adminPanel.getUsernameInputField().fill('admin')
+        await expect(adminPanel.getUsernameInputField()).toBeAttached();
+        await adminPanel.fillUsername('admin')
         await adminPanel.getSubmitButton().click();
-        adminPanel.expectInputFieldToHaveAnError(adminPanel.getUsernameInputField());
-        adminPanel.expectInputFieldToHaveAnError(adminPanel.getPasswordInputField());
+        await expect(adminPanel.getUsernameInputField()).toHaveAttribute("style", /red/);
     });
 })

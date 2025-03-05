@@ -50,8 +50,4 @@ export class AdminPanel {
   getLoginHeader(): Locator {
     return this.loginHeader;
   }
-
-  async expectInputFieldToHaveAnError(field: Locator) {
-    await expect(field).toHaveAttribute('style', expect.stringContaining('red'))
-  }
 }
