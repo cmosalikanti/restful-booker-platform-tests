@@ -1,4 +1,4 @@
-import { Locator, Page } from '@playwright/test';
+import { Locator, Page, expect } from '@playwright/test';
 
 export class AdminPanel {
   readonly page: Page;
@@ -23,14 +23,14 @@ export class AdminPanel {
     await this.passwordInputField.fill(password);
   }
 
-  async clickLoginButton(){
+  async submitAdminCredentials(){
     await this.submitButton.click();
   }
 
-  async login(username: string, password: string) {
+  async loginWith(username: string, password: string) {
     await this.fillUsername(username);
     await this.fillPassword(password);
-    await this.clickLoginButton();
+    await this.submitAdminCredentials();
   }
 
   getUsernameInputField(): Locator {
@@ -47,5 +47,13 @@ export class AdminPanel {
 
   getLoginHeader(): Locator {
     return this.loginHeader;
+  }
+
+  getBnBBookingManagement() {
+    return this.page.getByRole('link', { name: 'B&B Booking Management' });
+  }
+
+  async expectErrorFor(field: Locator) {
+    await expect(field).toHaveAttribute("style", /red/);
   }
 }
