@@ -13,6 +13,8 @@ export class ContactUsPanel {
         this.nameInputField = this.page.getByTestId('ContactName');
         this.emailInputField = this.page.getByTestId('ContactEmail');
         this.phoneInputField = this.page.getByTestId('ContactPhone');
+        this.subjectInputField = this.page.getByTestId('ContactSubject');
+        this.messageInputField = this.page.getByTestId('ContactDescription');
     }
 
     getNameInputField(): Locator {
@@ -28,11 +30,11 @@ export class ContactUsPanel {
     }
 
     getSubjectInputField(): Locator {
-        return this.page.getByTestId('ContactSubject');
+        return this.subjectInputField;
     }
 
     getMessageInputField(): Locator {
-        return this.page.getByTestId('ContactDescription');
+        return this.messageInputField;
     }
 
     async expectIconIsVisibleFor(filterString: string) {

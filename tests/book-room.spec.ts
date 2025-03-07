@@ -16,15 +16,32 @@ test.describe('Should be able to make a booking', () => {
 
         roomBookingDetails = new RoomBookingDetails(page);
 
-        const startBoundingBox = await page.locator('div.rbc-date-cell:not(.rbc-off-range,.rbc-current) button').nth(1).boundingBox();
-        const endBoundingBox = await page.locator('div.rbc-date-cell:not(.rbc-off-range,.rbc-current) button').nth(3).boundingBox();
+        const startBoundingBox = await page.locator('div.rbc-date-cell:not(.rbc-off-range,.rbc-current) button')
+                                    .nth(1)
+                                    .boundingBox();
+        const endBoundingBox = await page.locator('div.rbc-date-cell:not(.rbc-off-range,.rbc-current) button')
+                                     .nth(3)
+                                     .boundingBox();
 
-          // Click and drag to select date range
-        await page.mouse.move(startBoundingBox.x + startBoundingBox.width / 2, startBoundingBox.y + startBoundingBox.height / 2);
+        if (startBoundingBox !== null && startBoundingBox !== undefined) {
+            await page.mouse.move(
+                startBoundingBox.x + startBoundingBox.width / 2,
+                startBoundingBox.y + startBoundingBox.height / 2
+            );
+        } else {
+            console.error('startBoundingBox is null or undefined');
+        }
+
         await page.mouse.down();
 
+        if (endBoundingBox !== null && endBoundingBox !== undefined) {
+            await page.mouse.move(
+                endBoundingBox.x + endBoundingBox.width / 2,
+                endBoundingBox.y + endBoundingBox.height / 2);
+        } else {
+            console.error('endBoundingBox is null or undefined');
+        }
         //  Drag to the end date
-        await page.mouse.move(endBoundingBox.x + endBoundingBox.width / 2, endBoundingBox.y + endBoundingBox.height / 2);
 
           // Release the mouse to finalize the date selection
         await page.mouse.up();
