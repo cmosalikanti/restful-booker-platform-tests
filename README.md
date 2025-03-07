@@ -1,10 +1,19 @@
+##  Overview
+
+This project currently has UI automation tests for the application https://automationintesting.online/, developed by
+Mark Winteringham. The tests are written using the Playwright automation framework.
+
 ##  How to set-up the project
 1. Clone the project
 2. Run the below to install the node dependencies
 ```
 npm install
 ```
-3. Run the tests with the below command line.
+3. Download the browsers
+```
+npx playwright install
+```
+3. Run the tests with the various command line options as described below.
 
 ## Command line - running the Tests
 
@@ -15,7 +24,7 @@ npx playwright test
 
 Run a single test file
 ```
-npx playwright test tests/home-page.spec.ts
+npx playwright test tests/home/home-page.spec.ts
 ```
 
 Run tests in interactive UI mode, with a built-in watch mode (Preview)
