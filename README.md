@@ -9,11 +9,11 @@ Mark Winteringham. The tests are written using the Playwright automation framewo
 ```
 npm install
 ```
-3. Download the browsers
+3. Download the browser binaries needed for testing (e.g., Chromium, WebKit, and Firefox) and install
 ```
 npx playwright install
 ```
-3. Run the tests with the various command line options as described below.
+4. Run the tests with the various command line options as described below.
 
 ## Command line - running the Tests
 
