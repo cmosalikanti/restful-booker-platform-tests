@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "tsc --noEmit"
+    "tsc": "tsc --noEmit"
   },
+  "pre-commit": [ "tsc" ],
   "keywords": [],
   "author": "",
   "license": "ISC",
