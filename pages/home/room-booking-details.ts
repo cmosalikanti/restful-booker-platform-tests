@@ -2,37 +2,37 @@ import { Locator, Page } from '@playwright/test';
 
 export class RoomBookingDetails {
     private page: Page;
-    private firstName: Locator;
-    private lastName: Locator;
-    private email: Locator;
-    private phone: Locator;
+    private firstNameLocator: Locator;
+    private lastNameLocator: Locator;
+    private emailLocator: Locator;
+    private phoneLocator: Locator;
 
     constructor(page: Page) {
         this.page = page;
-        this.firstName = this.page.locator('input[name="firstname"]')
-        this.lastName = this.page.locator('input[name="lastname"]')
-        this.email = this.page.locator('input[name="email"]')
-        this.phone = this.page.locator('input[name="phone"]')
+        this.firstNameLocator = this.page.locator('input[name="firstname"]');
+        this.lastNameLocator = this.page.locator('input[name="lastname"]');
+        this.emailLocator = this.page.locator('input[name="email"]');
+        this.phoneLocator = this.page.locator('input[name="phone"]');
     }
 
     async enterFirstname(firstName: string) {
-        await this.firstName.click()
-        await this.firstName.fill(firstName);
+        await this.firstNameLocator.click();
+        await this.firstNameLocator.fill(firstName);
     }
 
     async enterLastname(lastName: string) {
-        await this.lastName.click()
-        await this.lastName.fill(lastName);
+        await this.lastNameLocator.click();
+        await this.lastNameLocator.fill(lastName);
     }
 
     async enterEmail(email: string) {
-        await this.email.click()
-        await this.email.fill(email);
+        await this.emailLocator.click();
+        await this.emailLocator.fill(email);
     }
 
     async enterPhone(phone: string) {
-        await this.phone.click()
-        await this.phone.fill(phone);
+        await this.phoneLocator.click();
+        await this.phoneLocator.fill(phone);
     }
 
     async book() {
