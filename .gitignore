@@ -7,3 +7,11 @@ node_modules/
 /playwright/.cache/
 
 .DS_Store
+/.idea/.gitignore
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/compiler.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/codeStyles/Project.xml
+/restful-booker-platform-tests.iml
+/.idea/vcs.xml
