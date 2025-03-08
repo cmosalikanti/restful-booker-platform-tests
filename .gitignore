@@ -15,3 +15,4 @@ node_modules/
 /.idea/codeStyles/Project.xml
 /restful-booker-platform-tests.iml
 /.idea/vcs.xml
+.idea/aws.xml
