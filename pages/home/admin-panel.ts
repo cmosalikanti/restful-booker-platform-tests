@@ -2,10 +2,10 @@ import { Locator, Page, expect } from '@playwright/test';
 
 export class AdminPanel {
   readonly page: Page;
-  private loginHeader: Locator
-  private usernameInputField: Locator;
-  private passwordInputField: Locator;
-  private submitButton: Locator;
+  readonly loginHeader: Locator
+  readonly usernameInputField: Locator;
+  readonly passwordInputField: Locator;
+  readonly submitButton: Locator;
   
   constructor(page: Page) {
     this.page = page;

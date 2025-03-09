@@ -1,12 +1,12 @@
 import { Locator, Page, expect } from '@playwright/test';
 
 export class ContactUsPanel {
-    private nameInputField: Locator;
-    private emailInputField: Locator;
-    private phoneInputField: Locator;
-    private subjectInputField: Locator;
-    private messageInputField: Locator;
-    private page: Page;
+    readonly nameInputField: Locator;
+    readonly emailInputField: Locator;
+    readonly phoneInputField: Locator;
+    readonly subjectInputField: Locator;
+    readonly messageInputField: Locator;
+    readonly page: Page;
 
     constructor(page: Page) {
         this.page = page;

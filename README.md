@@ -70,3 +70,7 @@ A quick way of opening the last test run report is:
 ```
 npx playwright show-report
 ```
+
+
+#### PageObjectModel template
+https://playwright.dev/docs/pom

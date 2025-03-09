@@ -46,7 +46,6 @@ test('should verify the contents on welcome page section', async ({ page }) => {
 
 test('should verify the contents of the Rooms section', async ({ page }) => {
   await page.goto('/');
-  await page.goto('https://automationintesting.online/');
   await page.getByRole('link', { name: 'home page' }).click();
   await expect(page.locator('.container-fluid img.hotel-logoUrl')).toBeVisible();
   await expect(page.getByText('Welcome to Shady Meadows')).toBeVisible();

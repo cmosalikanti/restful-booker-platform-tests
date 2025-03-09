@@ -10,7 +10,6 @@ test.describe('Contact us panel tests', () => {
     });
     
     test('should be able to view contact us panel and the contents', async ({ page }) => {
-        await page.goto('/');
         await page.getByRole('link', { name: 'home page' }).click();
       
         await expect(contactUsPanel.getNameFieldAddOn()).toBeVisible();
@@ -34,7 +33,6 @@ test.describe('Contact us panel tests', () => {
     });
 
     test('should report errors when information for contact us is not provided', async({ page }) => {
-        await page.goto('https://automationintesting.online/');
         await page.getByRole('link', { name: 'home page' }).click();
         await contactUsPanel.submitContactUs();
         await expect(contactUsPanel.getContactUsForm()).toContainText('Phone may not be blank');

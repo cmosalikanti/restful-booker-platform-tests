@@ -1,11 +1,11 @@
 import { Locator, Page } from '@playwright/test';
 
 export class RoomBookingDetails {
-    private page: Page;
-    private firstNameLocator: Locator;
-    private lastNameLocator: Locator;
-    private emailLocator: Locator;
-    private phoneLocator: Locator;
+    readonly page: Page;
+    readonly firstNameLocator: Locator;
+    readonly lastNameLocator: Locator;
+    readonly emailLocator: Locator;
+    readonly phoneLocator: Locator;
 
     constructor(page: Page) {
         this.page = page;
