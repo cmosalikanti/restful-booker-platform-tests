@@ -1,3 +1,5 @@
+[![Playwright Tests for Restful Booker Platform](https://github.com/cmosalikanti/restful-booker-platform-tests/actions/workflows/ci.yml/badge.svg)](https://github.com/cmosalikanti/restful-booker-platform-tests/actions/workflows/ci.yml)
+
 ##  Overview
 
 This project currently has UI automation tests for the application https://automationintesting.online/, developed by
